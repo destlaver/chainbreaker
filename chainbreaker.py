@@ -833,18 +833,18 @@ def main():
                 passwd = keychain.SSGPDecryption(record[0], real_key)
             except KeyError:
                 passwd = ''
-            # print ' [-] Create DateTime: %s' % record[1]  # 16byte string
-            # print ' [-] Last Modified DateTime: %s' % record[2]  # 16byte string
-            # print ' [-] Description : %s' % record[3]
-            # print ' [-] Creator : %s' % record[4]
-            # print ' [-] Type : %s' % record[5]
-            # print ' [-] PrintName : %s' % record[6]
-            # print ' [-] Alias : %s' % record[7]
-            # print ' [-] Account : %s' % record[8]
-            # print ' [-] Service : %s' % record[9]
-            # print ' [-] Password'
-            # hexdump(passwd)
-            # print ''
+            print ' [-] Create DateTime: %s' % record[1]  # 16byte string
+            print ' [-] Last Modified DateTime: %s' % record[2]  # 16byte string
+            print ' [-] Description : %s' % record[3]
+            print ' [-] Creator : %s' % record[4]
+            print ' [-] Type : %s' % record[5]
+            print ' [-] PrintName : %s' % record[6]
+            print ' [-] Alias : %s' % record[7]
+            print ' [-] Account : %s' % record[8]
+            print ' [-] Service : %s' % record[9]
+            print ' [-] Password'
+            hexdump(passwd)
+            print ''
 
     except KeyError:
         print '[!] Generic Password Table is not available'
@@ -855,37 +855,37 @@ def main():
 
         for internetpw in internetpw_list:
             record = keychain.getInternetPWRecord(TableList[tableEnum[CSSM_DL_DB_RECORD_INTERNET_PASSWORD]], internetpw)
-            # print '[+] Internet Record'
+            print '[+] Internet Record'
             try:
                 real_key = key_list[record[0][0:20]]
                 passwd = keychain.SSGPDecryption(record[0], real_key)
             except KeyError:
                 passwd = ''
-            # print ' [-] Create DateTime: %s' % record[1]  # 16byte string
-            # print ' [-] Last Modified DateTime: %s' % record[2]  # 16byte string
-            # print ' [-] Description : %s' % record[3]
-            # print ' [-] Comment : %s' % record[4]
-            # print ' [-] Creator : %s' % record[5]
-            # print ' [-] Type : %s' % record[6]
-            # print ' [-] PrintName : %s' % record[7]
-            # print ' [-] Alias : %s' % record[8]
-            # print ' [-] Protected : %s' % record[9]
-            # print ' [-] Account : %s' % record[10]
-            # print ' [-] SecurityDomain : %s' % record[11]
-            # print ' [-] Server : %s' % record[12]
-            # try:
-            #     print ' [-] Protocol Type : %s' % PROTOCOL_TYPE[record[13]]
-            # except KeyError:
-            #     print ' [-] Protocol Type : %s' % record[13]
-            # try:
-            #     print ' [-] Auth Type : %s' % AUTH_TYPE[record[14]]
-            # except KeyError:
-            #     print ' [-] Auth Type : %s' % record[14]
-            # print ' [-] Port : %d' % record[15]
-            # print ' [-] Path : %s' % record[16]
-            # print ' [-] Password'
-            # hexdump(passwd)
-            # print ''
+            print ' [-] Create DateTime: %s' % record[1]  # 16byte string
+            print ' [-] Last Modified DateTime: %s' % record[2]  # 16byte string
+            print ' [-] Description : %s' % record[3]
+            print ' [-] Comment : %s' % record[4]
+            print ' [-] Creator : %s' % record[5]
+            print ' [-] Type : %s' % record[6]
+            print ' [-] PrintName : %s' % record[7]
+            print ' [-] Alias : %s' % record[8]
+            print ' [-] Protected : %s' % record[9]
+            print ' [-] Account : %s' % record[10]
+            print ' [-] SecurityDomain : %s' % record[11]
+            print ' [-] Server : %s' % record[12]
+            try:
+                print ' [-] Protocol Type : %s' % PROTOCOL_TYPE[record[13]]
+            except KeyError:
+                print ' [-] Protocol Type : %s' % record[13]
+            try:
+                print ' [-] Auth Type : %s' % AUTH_TYPE[record[14]]
+            except KeyError:
+                print ' [-] Auth Type : %s' % record[14]
+            print ' [-] Port : %d' % record[15]
+            print ' [-] Path : %s' % record[16]
+            print ' [-] Password'
+            hexdump(passwd)
+            print ''
 
     except KeyError:
         print '[!] Internet Password Table is not available'
